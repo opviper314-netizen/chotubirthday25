@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Chotu ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stars"></div>
+
+<div class="music-note">🎵 <span id="musicStatus">Add your song</span></div>
+<audio id="song" loop></audio>
+
+<section class="hero screen">
+  <div class="glow"></div>
+  <p class="eyebrow">A little something for you</p>
+  <h1>For <span>Chotu</span></h1>
+  <p class="subtitle">Some memories deserve their own little universe.</p>
+  <button class="primary" onclick="startJourney()">Open your gift ✨</button>
+  <p class="tiny">Headphones recommended</p>
+</section>
+
+<section class="screen reveal" id="birthday">
+  <p class="eyebrow">28 · 08</p>
+  <h2>Happy Birthday,<br><span>Chotu.</span></h2>
+  <p class="lead">Today isn't just about another year. It's about celebrating the person you are becoming.</p>
+  <button class="ghost" onclick="nextSection('story')">Begin our little story →</button>
+</section>
+
+<section class="screen reveal" id="story">
+  <p class="eyebrow">Chapter I</p>
+  <h2>And then, somehow,<br><span>we happened.</span></h2>
+  <div class="story-card">
+    <div class="date">THE BEGINNING</div>
+    <p>It started on a social app called <b>Harbor</b>. Just two people crossing paths on a screen — and somehow that small interaction became a collection of moments worth remembering.</p>
+  </div>
+  <button class="ghost" onclick="nextSection('memories')">Show me the memories →</button>
+</section>
+
+<section class="screen reveal" id="memories">
+  <p class="eyebrow">Chapter II · Our little chaos</p>
+  <h2>Four moments.<br><span>Infinite memories.</span></h2>
+  <div class="memory-grid">
+    <article class="memory"><span>01</span><h3>The first hug</h3><p>One of those moments that somehow stays warmer in memory than it ever was in real life.</p></article>
+    <article class="memory"><span>02</span><h3>The traffic policeman</h3><p>Because apparently even our memories needed a little plot twist.</p></article>
+    <article class="memory"><span>03</span><h3>The theatre experience</h3><p>A simple outing that became one of those chapters I wouldn't mind replaying.</p></article>
+    <article class="memory"><span>04</span><h3>The flower in your hair</h3><p>A tiny flower, a tiny moment — and somehow a picture worth keeping forever.</p></article>
+  </div>
+  <button class="ghost" onclick="nextSection('reasons')">There's more →</button>
+</section>
+
+<section class="screen reveal" id="reasons">
+  <p class="eyebrow">Chapter III</p>
+  <h2>Things that make<br><span>you, you.</span></h2>
+  <div class="reason-wrap">
+    <button class="reason" onclick="revealReason(this)">♡ <span>Tap me</span><b>Your caring nature</b></button>
+    <button class="reason" onclick="revealReason(this)">✦ <span>Tap me</span><b>The passion you have for your career</b></button>
+    <button class="reason" onclick="revealReason(this)">∞ <span>Tap me</span><b>The love you have for the people close to you</b></button>
+    <button class="reason" onclick="revealReason(this)">☻ <span>Tap me</span><b>Your absolutely mast pet side</b></button>
+  </div>
+  <p class="hint">Tap every card. There may be a little surprise at the end.</p>
+  <button class="ghost" onclick="nextSection('gallery')">One more chapter →</button>
+</section>
+
+<section class="screen reveal" id="gallery">
+  <p class="eyebrow">Chapter IV · Us</p>
+  <h2>A few frames<br><span>from our story.</span></h2>
+  <div class="gallery">
+    <label class="photo"><input type="file" accept="image/*" onchange="loadPhoto(this,0)"><img id="photo0" src="placeholder.svg"><span>Photo 01</span></label>
+    <label class="photo"><input type="file" accept="image/*" onchange="loadPhoto(this,1)"><img id="photo1" src="placeholder.svg"><span>Photo 02</span></label>
+    <label class="photo"><input type="file" accept="image/*" onchange="loadPhoto(this,2)"><img id="photo2" src="placeholder.svg"><span>Photo 03</span></label>
+    <label class="photo"><input type="file" accept="image/*" onchange="loadPhoto(this,3)"><img id="photo3" src="placeholder.svg"><span>Photo 04</span></label>
+    <label class="photo"><input type="file" accept="image/*" onchange="loadPhoto(this,4)"><img id="photo4" src="placeholder.svg"><span>Photo 05</span></label>
+  </div>
+  <p class="hint">Tap a frame to add one of your photos. They stay on your device.</p>
+  <button class="ghost" onclick="nextSection('letter')">Read the letter →</button>
+</section>
+
+<section class="screen reveal" id="letter">
+  <p class="eyebrow">Chapter V · From Chakr</p>
+  <div class="letter">
+    <h2>To my Chotu,</h2>
+    <p>I hope you never forget how strong you are. Not just in the obvious moments, but in all the quiet ones too — the days when you keep moving, keep caring, keep trying, and keep becoming more of yourself.</p>
+    <p>You are beautiful in a way that goes far beyond appearance. It's in the way you care about the people close to you, the passion you carry for your future, and that wonderfully mast version of you that makes ordinary moments memorable.</p>
+    <p>On your birthday, I don't wish for your life to be perfect. I wish for it to be full — full of success that makes you proud, happiness that feels effortless, people who genuinely value you, and dreams that slowly become things you can call your own.</p>
+    <p>May you achieve everything you work for. May you stay brave when life gets difficult, gentle when it gets easy, and always remember how much light you carry with you.</p>
+    <p class="signature">Happy Birthday, Chotu. ♡<br><span>— Chakr</span></p>
+  </div>
+  <button class="primary" onclick="finale()">One last surprise ✨</button>
+</section>
+
+<section class="finale" id="finale">
+  <div class="fireworks"></div>
+  <p class="eyebrow">THE END?</p>
+  <h2>Not really.</h2>
+  <p>Because the best part of a story is knowing there are still chapters left to write.</p>
+  <div class="final-line">Here's to your success. Your happiness. Your dreams.<br>And all the beautiful things waiting for you.</div>
+  <div class="big-heart">♡</div>
+  <p class="from">With love,<br><b>Chakr</b></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
